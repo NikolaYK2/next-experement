@@ -7,6 +7,7 @@ export const NavBar = () => {
     <div className={s.containerNavBar}>
       <Link href={'/'}>Main</Link>
       <Link href={'/characters'}>Characters</Link>
+      <Link href={'/episodes'}>Episodes</Link>
     </div>
   );
 };
