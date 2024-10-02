@@ -6,7 +6,6 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'rickandmortyapi.com',
-                pathname: '/api/character/avatar/**'//** - означает что будет какая угодна картинка
             }
         ]
     }
