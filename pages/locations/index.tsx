@@ -1,9 +1,9 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
-import {getLayout} from "@/components/ui/layout/Layout";
 import Link from "next/link";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
 import {LocationRes, locationsApi} from "@/pages/locations/api/locationsApi";
 import {Card} from "@/components/ui/card/Card";
+import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
 
 export const getStaticProps = async () => {//вызывается каждый раз когда запрашивается страница, означает что запрашиваемые данные динамические
   const queryClient = new QueryClient();

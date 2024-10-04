@@ -1,8 +1,8 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
-import {getLayout} from "@/components/ui/layout/Layout";
 import Link from "next/link";
 import {episodesApi, EpisodesRes} from "@/pages/episodes/api/episodesApi";
 import {Card} from "@/components/ui/card/Card";
+import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
 
 export const getServerSideProps = async () => {//вызывается каждый раз когда запрашивается страница, означает что запрашиваемые данные динамические
   const episodes = await episodesApi.getEpisodes()

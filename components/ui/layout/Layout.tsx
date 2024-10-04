@@ -1,20 +1,19 @@
-import React, {PropsWithChildren, ReactElement} from 'react';
+import React, {PropsWithChildren} from 'react';
 import {NextPage} from "next";
 import styles from "@/styles/Home.module.css";
 import {NavBar} from "@/components/ui/navBar/NavBar";
 
-const Layout: NextPage<PropsWithChildren> = (props) => {
-  const {children} = props
+export const Layout: NextPage<PropsWithChildren> = ({children}) => {
   return (
-    <main className={`${styles.main}`}>
+    <section className={`${styles.main}`}>
       <NavBar/>
-      <section style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+      <main style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
         {children}
-      </section>
-    </main>
+      </main>
+    </section>
   );
 };
 
-export const getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
-}
+// export const getLayout = (page: ReactElement) => {
+//   return <Layout>{page}</Layout>
+// }

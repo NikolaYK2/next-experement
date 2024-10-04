@@ -1,7 +1,7 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
-import {getLayout} from "@/components/ui/layout/Layout";
 import {CharacterCard} from "@/components/ui/characterCard/CharacterCard";
 import {useCharacter} from "@/assets/common/hooks/useCharacter";
+import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
 
 function Character() {
 

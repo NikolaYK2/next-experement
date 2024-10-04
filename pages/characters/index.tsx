@@ -1,8 +1,8 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
-import {getLayout} from "@/components/ui/layout/Layout";
 import {CharacterCard} from "@/components/ui/characterCard/CharacterCard";
 import Link from "next/link";
 import {charactersApi, CharactersType} from "@/pages/characters/api/charactersApi";
+import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
 
 export const getStaticProps = async () => {//асинхронная операция которая вызывается перед рендером компоненты
   const characters = await charactersApi.getCharacters()
