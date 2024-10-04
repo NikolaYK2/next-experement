@@ -8,7 +8,9 @@ const Layout: NextPage<PropsWithChildren> = (props) => {
   return (
     <main className={`${styles.main}`}>
       <NavBar/>
-      {children}
+      <section style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+        {children}
+      </section>
     </main>
   );
 };
