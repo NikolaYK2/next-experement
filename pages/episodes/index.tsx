@@ -1,8 +1,8 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
 import {getLayout} from "@/components/ui/layout/Layout";
-import {CharacterCard} from "@/components/ui/characterCard/CharacterCard";
 import Link from "next/link";
 import {episodesApi, EpisodesRes} from "@/pages/episodes/api/episodesApi";
+import {Card} from "@/components/ui/card/Card";
 
 export const getServerSideProps = async () => {//вызывается каждый раз когда запрашивается страница, означает что запрашиваемые данные динамические
   const episodes = await episodesApi.getEpisodes()
@@ -30,7 +30,7 @@ const Episodes = ({episodes}: Props) => {
       <HeadersApp title={'Characters'}/>
       {episodes && episodes.map((episode) => (
         <Link href={`/episodes/${episode.id}`} key={episode.id}>
-          <div>{episode.name}</div>
+          <Card name={episode.name}/>
         </Link>
       ))}
     </>
