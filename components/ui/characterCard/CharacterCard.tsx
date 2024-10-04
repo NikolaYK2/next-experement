@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import {CharactersType} from "@/assets/common/hooks/useCharacters";
-import s from "@/pages/characters/index.module.scss";
+import s from "./CharacterCard.module.scss";
 
 export const CharacterCard = ({name, image, id}: CharactersType) => {
   return (
