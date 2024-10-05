@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-export type CharactersType = {
+type CharactersType = {
   id: number,
   name: string,
   image: string
