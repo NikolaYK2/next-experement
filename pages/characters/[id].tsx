@@ -48,7 +48,8 @@ const Character = ({character}: CharacterProps) => {
 
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>ID: {characterId}</div>
 
-      {character && <CharacterCard image={character.image} name={character.name} id={character.id}/>}
+      {character &&
+        <CharacterCard status={character.status} image={character.image} name={character.name} id={character.id}/>}
 
       <button style={{textAlign: 'center', borderRadius: 10}} onClick={handlerGoTo}>GO TO CHARACTERS</button>
     </section>

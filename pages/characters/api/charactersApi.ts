@@ -1,12 +1,15 @@
-import {instance} from "@/pages/api/instance";
+import {instance} from "@/api/instance";
 
 export type Response<T = {}> = {
   results: T
 }
+export type StatusType = 'Alive' | 'Dead' | 'unknown'
+
 export type CharactersType = {
   id: number,
   name: string,
   image: string
+  status: StatusType
 }
 export const charactersApi = {
   async getCharacters() {

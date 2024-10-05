@@ -22,7 +22,9 @@ const Characters = ({characters}: Props) => {
     <>
       <HeadersApp title={'Characters'}/>
       {characters && characters.map((char) => (
-        <Link href={`/characters/${char.id}`} key={char.id}><CharacterCard name={char.name} image={char.image}
+        <Link href={`/characters/${char.id}`} key={char.id}><CharacterCard status={char.status}
+                                                                           name={char.name}
+                                                                           image={char.image}
                                                                            id={char.id}/></Link>
       ))}
     </>
