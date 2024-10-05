@@ -1,5 +1,5 @@
-import {instance} from "@/pages/api/instance";
 import {Response} from "@/pages/characters/api/charactersApi";
+import {instance} from "@/api/instance";
 
 
 export type EpisodesRes = {
