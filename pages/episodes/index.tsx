@@ -1,10 +1,13 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
 import Link from "next/link";
-import {episodesApi, EpisodesRes} from "@/pages/episodes/api/episodesApi";
 import {Card} from "@/components/ui/card/Card";
 import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
+import {episodesApi, EpisodesRes} from "@/features/episodes/api/episodesApi";
+import {GetServerSideProps} from "next";
 
-export const getServerSideProps = async () => {//вызывается каждый раз когда запрашивается страница, означает что запрашиваемые данные динамические
+export const getServerSideProps: GetServerSideProps = async ({res}) => {//вызывается каждый раз когда запрашивается страница, означает что запрашиваемые данные динамические
+  res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=100')//кэшируем на 100 сек
+
   const episodes = await episodesApi.getEpisodes()
 
   if (!episodes) {
