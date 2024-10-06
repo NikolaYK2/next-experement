@@ -1,9 +1,9 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
 import {CharacterCard} from "@/components/ui/characterCard/CharacterCard";
 import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
-import {charactersApi, CharactersType} from "@/pages/characters/api/charactersApi";
 import {GetStaticPaths, GetStaticProps} from "next";
 import {useRouter} from "next/router";
+import {charactersApi, CharactersType} from "@/features/characters/api/charactersApi";
 
 export const getStaticPaths: GetStaticPaths = async () => {//используется в связке getStaticProps, генерирует пути а getStaticProps странички
   const result = await charactersApi.getCharacters()

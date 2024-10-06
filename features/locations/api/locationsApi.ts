@@ -1,5 +1,5 @@
-import {Response} from "@/pages/characters/api/charactersApi";
 import {instance} from "@/api/instance";
+import {Response} from "@/features/characters/api/charactersApi";
 
 export type LocationRes = {
   id: number;

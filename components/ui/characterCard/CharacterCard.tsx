@@ -5,7 +5,7 @@ import success from '@/public/statuses/green.png'
 import dead from '@/public/statuses/red.png'
 import unk from '@/public/statuses/unk.png'
 import {Status} from "@/components/ui/status/Status";
-import {CharactersType} from "@/pages/characters/api/charactersApi";
+import {CharactersType} from "@/features/characters/api/charactersApi";
 
 
 const statusImage = {

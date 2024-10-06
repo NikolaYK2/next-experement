@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {CharactersType} from "@/assets/common/hooks/useCharacters";
 import {useRouter} from "next/router";
+import {CharactersType} from "@/features/characters/api/charactersApi";
 
-export const useCharacter = (): CharactersType | null => {
-  const [character, setCharacter] = useState<CharactersType>(null)
+const useCharacter = (): CharactersType | null => {
+  const [character, setCharacter] = useState<CharactersType | null>(null)
 
   const router = useRouter();//из next router
 
@@ -14,7 +14,7 @@ export const useCharacter = (): CharactersType | null => {
     }>(`${process.env.NEXT_PUBLIC_RICK_API_URL}/character/${router.query.id}`)//id в название файла
       .then(res => {
 
-        setCharacter(res.data)
+        setCharacter(res.data.data.results)
       })
   }, []);
 
