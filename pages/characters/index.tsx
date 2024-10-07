@@ -1,8 +1,16 @@
 import {HeadersApp} from "@/components/ui/headersApp/HeadersApp";
-import {CharacterCard} from "@/components/ui/characterCard/CharacterCard";
 import Link from "next/link";
 import {getLayout} from "@/components/ui/layout/baseLayout/BaseLayout";
 import {charactersApi, CharactersType} from "@/features/characters/api/charactersApi";
+import dynamic from "next/dynamic";
+
+const CharacterCard = dynamic(() => import('@/components/ui/characterCard/CharacterCard')
+    .then((module) => module.CharacterCard),
+  {
+    ssr: false,
+    loading: () => <h2>Loading...</h2>
+  }
+)
 
 export const getStaticProps = async () => {//асинхронная операция которая вызывается перед рендером компоненты
   const characters = await charactersApi.getCharacters()
