@@ -10,9 +10,20 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {//выз
 
   const episodes = await episodesApi.getEpisodes()
 
+  const isAuth = true //можно сделать запрос, вынести в утил функцию например
+
   if (!episodes) {
     return {
       notFound: true,
+    }
+  }
+
+  if (!isAuth) {
+    return {
+      redirect: {
+        destination: '/test',
+        permanent: false
+      }
     }
   }
 
@@ -42,6 +53,5 @@ const Episodes = ({episodes}: Props) => {
 
 Episodes.getLayout = getLayout
 export default Episodes
-
 
 
